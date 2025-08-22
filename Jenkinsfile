@@ -2,7 +2,7 @@ pipeline {
     agent any 
 
     environment {
-        DOCKER_IMAGE = "arunadocker123/jenkins-demo1"
+        DOCKER_IMAGE = "arunadocker123/jenkins-demo5"
         DOCKER_TAG = "latest"
         DOCKER_REGISTRY = "docker.io"
         DOCKER_DIGEST = "sha256:a449d2e0b0b2ed78f175d96f41650485ce597400a0db6fb8fd1aa18d5ee282b1"
@@ -27,7 +27,7 @@ pipeline {
                 echo "Registering Docker artifact..."
                 script {
                     registerBuildArtifactMetadata(
-                        name: "jenkins-demo1",
+                        name: "jenkins-demo5",
                         version: "1.0.0",
                         type: "docker",
                         url: "${env.DOCKER_REGISTRY}/${env.DOCKER_IMAGE}:${env.DOCKER_TAG}",
