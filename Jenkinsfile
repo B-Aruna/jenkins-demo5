@@ -5,7 +5,7 @@ pipeline {
         DOCKER_IMAGE = "arunadocker123/jenkins-demo5"
         DOCKER_TAG = "latest"
         DOCKER_REGISTRY = "docker.io"
-        DOCKER_DIGEST = "sha256:a449d2e0b0b2rd78f175d96f41650485ce597400a0db6fb8fd1aa18d5ee282b1"
+        DOCKER_DIGEST = "sha256:a449d2e0b0b2rd78f175d96f41650485ce597400a0db6fb9fd1aa18d5ee282b1"
     }
     stages {
         stage('Build') {
@@ -28,7 +28,7 @@ pipeline {
                 script {
                     registerBuildArtifactMetadata(
                         name: "jenkins-demo5",
-                        version: "2.0.0",
+                        version: "3.0.0",
                         type: "docker",
                         url: "${env.DOCKER_REGISTRY}/${env.DOCKER_IMAGE}:${env.DOCKER_TAG}",
                         digest: "${env.DOCKER_DIGEST}",
